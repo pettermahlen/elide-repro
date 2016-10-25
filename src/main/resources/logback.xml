@@ -1,0 +1,9 @@
+<configuration>
+    <appender name="syslog" class="com.spotify.logging.logback.SpotifyInternalAppender">
+        <serviceName>sysmodel-jsonapi</serviceName>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="syslog" />
+    </root>
+</configuration>

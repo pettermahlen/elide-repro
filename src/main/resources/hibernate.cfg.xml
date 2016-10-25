@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
+        <property name="hibernate.hikari.dataSource.url">jdbc:mysql://localhost:3306/repro?useSSL=false</property>
+        <property name="hibernate.hikari.dataSource.user">testuser</property>
+        <property name="hibernate.hikari.dataSource.password">sEcRet</property>
+        <property name="hibernate.hikari.dataSourceClassName">com.mysql.jdbc.jdbc2.optional.MysqlDataSource</property>
+        <!--<property name="hibernate.hikari.dataSource.cachePrepStmts">true</property>-->
+        <!--<property name="hibernate.hikari.dataSource.prepStmtCacheSize">250</property>-->
+        <!--<property name="hibernate.hikari.dataSource.prepStmtCacheSqlLimit">2048</property>-->
+        <!--<property name="hibernate.hikari.dataSource.useServerPrepStmts">true</property>-->
+        <property name="hbm2ddl.auto">update</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Names the annotated entity class -->
+        <mapping class="com.spotify.repro.model.Team"/>
+    </session-factory>
+</hibernate-configuration>
